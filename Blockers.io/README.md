@@ -1,6 +1,8 @@
 # Blockers
 Game similar to snake, tetris, and other high score games.
 
+To start the game, go to https://tzwukerf.github.io/Blockers.io/
+
 To move, use the arrow keys. You initially play as an O. Every time you move a space, an obstacle appears (represented as a 1). If you go to the top left corner (the square where there's a B) you become an X, which can get rid of 1s if you walk over them, except every time you walk as an X, a 2 appears. Now, you have to get to the P in the bottom left corner to turn back into an O and get rid of the 2s.
 
 Get as many goals as you can before you get locked!
