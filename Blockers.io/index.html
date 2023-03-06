@@ -7,16 +7,17 @@
 
     <div id="container">
     </div>
-    <p>
+    <!--<p class="character">
+    
+    </p>-->
 
-    </p>
-
-    <script type="text/javascript">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
 
   </body>
 
 </html>
+
 
 <style>
 :root {
@@ -27,24 +28,40 @@
 #container {
   display: grid;
   grid-gap: 0em;
-  grid-template-rows: repeat(var(--grid-rows), 1fr);
-  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 0fr);
+  grid-template-columns: repeat(var(--grid-cols), 0fr);
+  justify-content: center;
 }
 
 .grid-item {
-  padding: 1.5em;
+  padding: 2em;
   border: 1px solid #ddd;
   text-align: center;
 }
+
 .blue {
   fill: #0000ff;
 }
+
 .purple {
   fill: #7F00FF;
 }
+
 .white {
   fill: #FFFFFF;
 }
+
+.character {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background-color: #6d00c1;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+	
 </style>
 
 <script>
@@ -71,17 +88,31 @@ const container = document.getElementById("container");
 
 //if color is true, circle is purple, if it is false then it is blue
 var color = true;
-var List = initialSet(5, 5);
+var List = initialSet(6, 5);
 var rows = List[0];
 var cols = List[1];
 var randomGoal = List[2];
 var randomInitial = List[3];
 var randomInitialValue = List[3];
 var x = 0;
+var speed = "fast";
+var circleMove = "85";
 
 var points = 0;
 
 var number = ((rows*cols)-(cols-1));
+
+/*$(document).ready(function(){
+$("*").keydown(function(){
+if(event.which == 37){
+$(".character").animate({right: "+="+circleMove+"px"}, speed)}
+else if(event.which == 39){
+$(".character").animate({left: "+="+circleMove+"px"}, speed)}
+        });
+  
+});*/
+        
+
 
 function keyDown(e) {
 
@@ -94,25 +125,41 @@ function keyDown(e) {
     if (color == true) {
       //if keydown is left
       if (e.keyCode == 37) {
-
+        
         x--;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 1 || (randomInitial + x)%cols == 0) {
           x++;
+        }
+        }
+        catch(err){
+        	x++;
         }
       }
       //up
       if (e.keyCode == 38) {
 
         x += -cols;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 1) {
           x += cols;
+        }
+        }
+        catch(err){
+        x += cols;
         }
       }
       //right
       if (e.keyCode == 39) {
+      
         x++;
-        if (document.getElementById("grid" + (randomInitial + x)).innerText == 1  || (randomInitial + x)%cols == 1) {
+        try{
+        if (document.getElementById("grid" + (randomInitial + x)).innerText == 1  || (randomInitial + x)%cols == 1 || randomInitial+x == (rows*cols)+1) {
           x--;
+        }
+        }
+        catch(err){
+        x--;
         }
       }
 
@@ -120,9 +167,14 @@ function keyDown(e) {
       if (e.keyCode == 40) {
 
         x += cols;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 1) {
           x += -cols;
         }
+        }
+        catch(err){
+        x += -cols;
+      }
       }
       
       
@@ -148,33 +200,54 @@ function keyDown(e) {
       if (e.keyCode == 37) {
 
         x--;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 2 || (randomInitial + x)%cols == 0) {
           x++;
         }
+      }
+     
+      catch(err){
+      x++;
+      }
       }
       //up
       if (e.keyCode == 38) {
 
         x += -cols;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 2) {
           x += cols;
         }
+      }
+      catch(err){
+      x+= cols;
+      }
       }
       //right
       if (e.keyCode == 39) {
 
         x++;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 2 || (randomInitial + x)%cols == 1) {
           x--;
         }
 
       }
+      catch(err){
+      x--;
+      }
+      }
       //down
       if (e.keyCode == 40) {
         x += cols;
+        try{
         if (document.getElementById("grid" + (randomInitial + x)).innerText == 2) {
           x += -cols;
         }
+      }
+      catch(err){
+      x += -cols;
+      }
       }
 
       randomInitial += x;
@@ -221,12 +294,6 @@ function keyDown(e) {
 }
 
 
-
-
-
-
-
-
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
@@ -259,7 +326,15 @@ function initialSet(r, c) {
   document.getElementById("grid"+ ((rows*cols)-(cols-1))).innerText = "P";
   document.getElementById("grid"+cols).innerText = "B";
   
+
+  
   return [rows, cols, randomGoal, randomInitial];
 }
 
+function checker(currX, currGoal){
+
+//this funciton checks if X can change colors and if the goal is attainable
+//from X to the goal and from X to the color change is there something blocking
+
+}
 </script>
