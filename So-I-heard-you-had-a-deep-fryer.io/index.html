@@ -58,143 +58,168 @@ Trebuchet MS; font-weight:bold;">
 
 </html>
 
+
 <style>
-  
-  div {
-  vertical-align: middle;
-  margin: 0.7em;
-}
-
-div::before,
-div::after {
-  content: "";
-}
-
-.special {
+h1 {
   text-align: center;
-  height: 100%;
+  font-size: 100px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: #737373;
 }
 
-.other {
-  background-color: white;
-  border: 0px;
-  font-family: Lucidatypewriter, monospace;
-  float: left;
+h2 {
+  text-align: center;
+  font-size: 26px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+  line-height: 1.5;
+  letter-spacing: 4px;
+  color: #999999;
 }
 
-#fate {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  font-style: bold;
+.fade {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 3s;
+  
+  animation-fill-mode: both;
+  
+}
 
-  margin-top: 200px;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
 
-  padding: 15px 27px;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade2 {
+  opacity: 0;
+  animation-name: fadeIn2;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-delay: 3s;
+  
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+div {
+  text-align: center;
+}
+
+.fadeInButtons {
+  opacity: 0;
+  animation-name: fadeInButtons;
+  animation-duration: 3.5s;
+  animation-fill-mode: both;
+  animation-delay: 6.5s;
+  
+}
+
+@keyframes fadeInButtons {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+button {
+  position: absolute;
+  border: none;
+  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+}
 
+#personality {
+  background-color: #008CBA;
+  color: white;
+  margin: 25px 50px 75px -300px;
+  line-height: 1.2;
+  padding: 15px 20px;
+}
+
+#personality:hover{
   background-color: white;
-  color: green;
-  border: 2px solid #4CAF50;
-  white-space: pre-wrap;
+  color: black;
+  border: 2px solid #008CBA;
 }
 
-#fate:hover {
-  background-color: black;
-  color: red;
-  border: 2px solid red;
-  box-shadow: 30px 30px 50px #111111, -30px -30px 50px #111111, 30px -30px 50px #111111, -30px 30px 50px #111111;
+#random {
+  background-color: #f44336;
+  color: white;
+  margin: 25px 50px 75px 100px;
 }
 
-/* crown model code from https://gist.github.com/yoksel/6560595 */
+#random:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #f44336;
+}
 
-.crown {
+img{
   position: absolute;
-  width: 8em;
-  border-style: solid;
-  border-color: transparent gold gold;
-  border-width: 1.5em 1.3em 2.5em;
-  left: 50%;
-  margin-left: -85px;
-  margin-top: 130px;
-  z-index: 1;
-  border-radius: 3px;
+  width: 250px;
+  height: 250px;
+  z-index: -1;
 }
 
-.crown::before,
-.crown::after {
-  position: absolute;
-  width: 2;
-  margin-top: -1.5em;
-  border-style: solid;
-  border-color: gold transparent;
-  border-width: 0 2.1em 1.5em;
+#shittything1 {
+  margin: 0px 0px 75px -440px;
 }
 
-.crown::after {
-  right: 0;
+#shittything2{
+  margin: 0px 0px 75px -225px;
 }
 
-#coward {
-  position: absolute;
-  margin-left: 50%;
-  margin-top: 0%;
-  left: -180px;
-  background-color: transparent;
-  z-index: 2;
+#shittything3{
+  margin: 0px 50px 75px -40px;
 }
 
-#warrior {
-  position: absolute;
-  margin-left: 50%;
-  margin-top: 0%;
-  left: 97px;
-  background-color: transparent;
-  z-index: 2;
+#shittything4{
+  margin: 0px 0px 75px 162px;
 }
 
-.horns {
-  position: absolute;
-  left: 50%;
-  top: 0%;
-  margin-top: -100px;
-  z-index: -2;
-}
-
-#left-horn {
-  margin-left: -420px;
-}
-
-#right-horn {
-  margin-left: -183px;
-}
-
-#linkthing {
-  text-align: center;
-  margin-top: 200px;
-  font-size: 70px;
-  font-family: Staatliches;
-}
-
-#imglinkthing {
-  text-align: center;
-  margin-top: 30px;
-  height: 400px;
-  width: 500px;
-}
-
-#anothercont {
-  text-align: center;
-}
-
+.fadeInImages {
+  opacity: 0;
+  animation-name: fadeInButtons;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-delay: 8s;
   
-  
+}
+	
 </style>
 
 <script>
-  
 function randomRecipe(){
 
 	//links to random recipe subdirectory
@@ -205,7 +230,8 @@ function randomRecipe(){
 function personalityRecipe(){
 
 	//links to personality recipe subdirectory
-	window.location.href = '/moodfood.html';
+	window.location.href = '/moodfood';
   
 }
+	
 </script>
