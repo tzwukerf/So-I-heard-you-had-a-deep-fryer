@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Mood Food</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Great+Vibes|Ropa+Sans|Philosopher|Jaldi|Reem+Kufi">
+  </head>
+
+  <body>
+    <h1>
+      <span style="font-family: Great Vibes;font-size:100px;letter-spacing:8px;font-weight:30;">Your<br /></span>
+      <span style="font-family: Palatino;font-size:300px;letter-spacing:2px;font-weight:50">Perfect<br /></span>
+      <span style="font-family: monospace;font-size:50px;letter-spacing:1px;font-weight:5">Fried Food Recipe<br /></span>
+    </h1>
+    <h2>
+      Based on personality and science.*
+    </h2>
+
+    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810834068291846164/dumb_thomas_thing_1.png" id="shittythingleft" class="image">
+
+    <div class="line"></div>
+
+    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810837349692604426/dumb_thomas_thing_2.png" id="shittythingright" class="image">
+
+    <div class="big-container">
+      <div class="number" id="one">1</div>
+      <div class="questioncont">
+        <div class="question" id="qone"></div>
+      </div>
+      <div class="questioncont">
+
+        <div class="question2" id="q2one"></div>
+      </div>
+      <div class="container">
+        <div class="box one a" id="1A" onclick="counterAdder(first, '1A')"></div>
+        <div class="box one b" id="1B" onclick="counterAdder(first, '1B')"></div>
+        <div class="box one c" id="1C" onclick="counterAdder(first, '1C')"></div>
+        <div class="box one d" id="1D" onclick="counterAdder(first, '1D')"></div>
+      </div>
+
+      <div class="number" id="two">2</div>
+      <div class="questioncont">
+        <div class="question" id="qtwo"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2two"></div>
+      </div>
+      <div class="container">
+        <div class="box two a" id="2A" onclick="counterAdder(second, '2A')"></div>
+        <div class="box two b" id="2B" onclick="counterAdder(second, '2B')"></div>
+        <div class="box two c" id="2C" onclick="counterAdder(second, '2C')"></div>
+        <div class="box two d" id="2D" onclick="counterAdder(second, '2D')"></div>
+      </div>
+
+      <div class="number" id="three">3</div>
+      <div class="questioncont">
+        <div class="question" id="qthree"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2three"></div>
+      </div>
+      <div class="container">
+        <div class="box three a" id="3A" onclick="counterAdder(third, '3A')"></div>
+        <div class="box three b" id="3B" onclick="counterAdder(third, '3B')"></div>
+        <div class="box three c" id="3C" onclick="counterAdder(third, '3C')"></div>
+        <div class="box three d" id="3D" onclick="counterAdder(third, '3D')"></div>
+      </div>
+
+      <div class="number" id="four">4</div>
+      <div class="questioncont">
+        <div class="question" id="qfour"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2four"></div>
+      </div>
+      <div class="container">
+        <div class="box four a" id="4A" onclick="counterAdder(fourth, '4A')"></div>
+        <div class="box four b" id="4B" onclick="counterAdder(fourth, '4B')"></div>
+        <div class="box four c" id="4C" onclick="counterAdder(fourth, '4C')"></div>
+        <div class="box four d" id="4D" onclick="counterAdder(fourth, '4D')"></div>
+      </div>
+
+      <div class="number" id="five">5</div>
+      <div class="questioncont">
+        <div class="question" id="qfive"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2five"></div>
+      </div>
+      <div class="container">
+        <div class="box five a" id="5A" onclick="counterAdder(fifth, '5A')"></div>
+        <div class="box five b" id="5B" onclick="counterAdder(fifth, '5B')"></div>
+        <div class="box five c" id="5C" onclick="counterAdder(fifth, '5C')"></div>
+        <div class="box five d" id="5D" onclick="counterAdder(fifth, '5D')"></div>
+      </div>
+
+      <div class="results-button-div">
+        <button type="button" id="results" onclick="Results()">
+          RESULTS
+        </button>
+      </div>
+    </div>
+    <div class="asterisks">
+      * Margin of error .05148% <br />
+      ** Peer reviewed by well established scientists such as the dumbasses on our SMP.
+    </div>
+<div class="results-data">
+<p id="real-results">
+</p>
+<p id="fake-results">
+</p>
+</div>
+  </body>
+
+</html>
+
+<style>
+  h1 {
+  text-align: center;
+  line-height: 0.9;
+  letter-spacing: 1px;
+  color: #737373;
+  margin-top: 100px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+  line-height: 1.5;
+  letter-spacing: 4px;
+  color: #999999;
+}
+
+.line {
+  width: 700px;
+  height: 100px;
+  border-bottom: 4px solid #242424;
+  position: absolute;
+  left: 50%;
+  margin-left: -350px;
+}
+
+.image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  z-index: -1;
+}
+
+#shittythingleft {
+  margin-left: -900px;
+}
+
+#shittythingright {
+  margin-left: -80px;
+}
+
+.results-button-div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 3px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.asterisks {
+  text-align: center;
+  font-family: "Times New Roman", Times, Serif;
+  font-size: 9px;
+}
+
+.box {
+  margin: 0 auto;
+  font-family: "Segoe UI", Arial, sans-serif;
+  border: 5px solid darkgrey;
+  padding: 50px;
+  margin-top: 15px;
+  width: 200px;
+  color: #505050;
+}
+
+.container {
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 325px 325px;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.big-container {
+  justify-content: center;
+}
+
+.number {
+  float: left;
+  position: relative;
+  font-family: Serif;
+  color: grey;
+  font-size: 200px;
+  letter-spacing: 2px;
+  font-weight: 50;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: 300px;
+}
+
+.question {
+  position: relative;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  color: #505050;
+  margin-top: 200px;
+  width: 700px;
+  display: inline-block;
+}
+
+.questioncont {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+#real-results {
+  font-family: Reem Kufi;
+  font-size: 50px;
+}
+
+#fake-results {
+  font-family: Jaldi;
+  font-size: 17px;
+  width: 900px;
+  text-align: center;
+  margin: 0 auto;
+}
+  
+  
+</style>
+
+<script>
+  var list = {
+  bad: [{
+      name: "Deep-Fried Citrus Slices",
+      link: "https://www.thedailymeal.com/recipes/deep-fried-citrus-slices-recipe"
+    },
+    {
+      name: "Deep-Fried Tarantula Spider",
+      link: "https://www.epicurious.com/recipes/food/views/deep-fried-tarantula-spider-51184810"
+    }, {
+      name: "Deep-Fried Watermelon Bites",
+      link: "https://www.southernliving.com/recipes/fried-watermelon-bites-recipe"
+    }, {
+      name: "Deep-Fried Zucchini Flowers",
+      link: "https://www.allrecipes.com/recipe/247351/fried-zucchini-flowers/"
+    }, {
+      name: "Deep-Fried Butter",
+      link: "https://www.allrecipes.com/recipe/239140/deep-fried-butter/"
+    }, {
+      name: "Deep-Fried Beer",
+      link: "https://www.mashed.com/237701/fried-beer-exists-heres-what-we-know-about-it/#:~:text=It's%20just%20fried%20Coca%2DCola,and%20dropped%20in%20hot%20oil."
+    }, {
+      name: "Deep-Fried Kool Aid",
+      link: "https://www.justapinch.com/recipes/dessert/cake/deep-fried-kool-aid.html"
+    }, {
+      name: "Deep-Fried Bubblegum",
+      link: "https://www.youtube.com/watch?v=rKWGgL1nJGQ&ab_channel=SimpleCookingChannel"
+    }, {
+      name: "Deep-Fried Alligator",
+      link: "https://foodchannel.com/recipes/crispy-cajun-fried-alligator-recipe"
+    }, {
+      name: "Deep-Fried Sugar Cubes",
+      link: "https://www.cartooncuisine.com/the-simpsons/fried-sugar/"
+    }, {
+      name: "Deep-Fried Deviled Eggs",
+      link: "https://tasty.co/recipe/deep-fried-deviled-eggs"
+    }, {
+      name: "Deep-Fried Mayonnaise",
+      link: "http://friedmayo.com/"
+    }, {
+      name: "Deep-Fried Rice Balls",
+      link: "https://www.tasteofhome.com/recipes/deep-fried-rice-balls/"
+    }
+  ],
+  good: [{
+    name: "Deep-Fried Jelly Beans",
+    link: "https://www.atlasobscura.com/foods/deep-fried-jelly-beans#:~:text=Deep%2Dfried%20jelly%20beans%20require,somewhat%20mundane%2Dlooking%20fry%20balls."
+  }, {
+    name: "Deep-Fried Guacamole",
+    link: "https://www.delish.com/cooking/recipe-ideas/a29359513/deep-fried-guacamole-recipe/"
+  }, {
+    name: "Chicken-Fried Bacon",
+    link: "https://www.delish.com/cooking/recipe-ideas/a20730988/chicken-fried-bacon-recipe/"
+  }, {
+    name: "Deep-Fried Cadbury Creme Eggs",
+    link: "https://www.foodnetwork.com/recipes/food-network-kitchen/fried-cadbury-eggs-5513039"
+  }, {
+    name: "Deep-Fried Chocolate Chip Cookies",
+    link: "https://www.sugarhero.com/deep-fried-chocolate-chip-cookie-dough/"
+  }, {
+    name: "Deep-Fried Scrumptious Sauerkraut Balls",
+    link: "https://www.allrecipes.com/recipe/139183/scrumptious-sauerkraut-balls/"
+  }, {
+    name: "Deep-Fried Peanut Butter and Jelly Sandwiches",
+    link: "https://tasty.co/recipe/fried-peanut-butter-and-jelly-sandwich"
+  }, {
+    name: "Deep-Fried Pig Ears",
+    link: "https://www.seriouseats.com/recipes/2009/10/crisp-fried-pigs-ears-salad-recipe.html"
+  }, {
+    name: "Deep-Fried Ice Cream",
+    link: "https://www.allrecipes.com/recipe/20988/fried-ice-cream/"
+  }, {
+    name: "Deep-Fried Eggplant",
+    link: "https://www.foodnetwork.com/recipes/deep-fried-eggplant-3645054"
+  }, {
+    name: "Schnitzel",
+    link: "https://tasty.co/recipe/crispy-creamy-chicken-cordon-bleu"
+  }, {
+    name: "Deep-Fried Onion Rings",
+    link: "https://www.allrecipes.com/recipe/82659/old-fashioned-onion-rings/"
+  }, {
+    name: "Deep-Fried Shrimp",
+    link: "https://www.dinneratthezoo.com/fried-shrimp-recipe/"
+  }, {
+    name: "Deep-Fried Red Velvet Waffles and Chicken",
+    link: "https://www.razzledazzlelife.com/red-velvet-waffles-and-chicken/"
+  }]
+}
+
+
+var counter = 0;
+var first;
+var second;
+var third;
+var fourth;
+var fifth;
+
+var test_original = {
+  question_list: [{
+      q: "What would you do if you head turned into a big persimmon?",
+      q2: "",
+      a1: "cry.",
+      a2: "cry.",
+      a3: "cry.",
+      a4: "cry.",
+      c: ["a1", "a2", "a3", "a4"]
+
+    },
+    {
+      q: "What is the first letter of your grandpa's (father's side) best friend's brother's first cousin that was twice removed?",
+      q2: "",
+      a1: "T",
+      a2: "P",
+      a3: "Ø",
+      a4: "N",
+      c: ["a4"],
+    },
+    {
+      q: "Thomas is a dumbass.",
+      q2: "",
+      a1: "Yes.",
+      a2: "Yes.",
+      a3: "Yes.",
+      a4: "Yes.",
+      c: ["a1", "a2", "a3", "a4"]
+
+    },
+    {
+      q: "People buy me to eat but never eat me. What am I?",
+      q2: "",
+      a1: "A fork.",
+      a2: "Dasani Water.",
+      a3: "Vegan Meat.",
+      a4: "People can and will eat anything. You cannot stop the insanity that is the depth of human insatiability.",
+      c: ["a1", "a4"]
+
+    },
+    {
+      q: "What is the rarest M&M color? (Yes color not colour you fucking ponce)",
+      q2: "",
+      a1: "Brown",
+      a2: "Yellow",
+      a3: "Aquamarine",
+      a4: "Orange",
+      c: ["a1", "a2"]
+
+    },
+    {
+      q: "Book is to Reading while Thomas is to:",
+      q2: "",
+      a1: "Running into a doorframe.",
+      a2: "Building a castle.",
+      a3: "Staring at a ceiling wondering what he's doing in his life.",
+      a4: "Juggling.",
+      c: ["a4"]
+
+    },
+    {
+      q: "Pick what comes next in the series: 1, 1, 2, 3, 5, 8, 13, ?",
+      q2: "",
+      a1: "You really thought I'd give this one to you?",
+      a2: "Sorry but in this household",
+      a3: "We value RNG over logic any day baby",
+      a4: "wHy iS kAz sO meAn tO mE??!1!",
+      c: ["a4"]
+
+    },
+    {
+      q: "What would you do if the world turned bald right now. Right this second. Right this moment. Close your eyes, feel the moment. Now, answer.",
+      q2: "",
+      a1: "No multiple choice question can truly capture the amazement I'll feel in that situation.",
+      a2: "No multiple choice question can truly capture the bliss I'll feel in that situation.",
+      a3: "No multiple choice question can truly capture the fear I'll feel in that situation.",
+      a4: "No multiple choice question can truly capture the pain I'll feel in that situation.",
+      c: ["a3", "a4"]
+
+    },
+    {
+      q: "Your mission is to not accept this mission. Do you accept?",
+      q2: "",
+      a1: "Yes",
+      a2: "No",
+      a3: "Yes",
+      a4: "No",
+      c: [""]
+
+    },
+    {
+      q: "An area is bounded by the lines x=ln3, x=0, y=0, and y=e^x. What is the volume is you revolve that area around the y-axis?",
+      q2: "",
+      a1: "pi(3ln(3)-2)",
+      a2: "2pi(9ln^2(3))",
+      a3: "2pi(3ln(3)-2)",
+      a4: "pi(9ln^2(3))",
+      c: ["a3"]
+
+    },
+    {
+      q: "What is the first thing that comes to your mind when you look at this image?",
+      q2: "https://cdn.discordapp.com/attachments/748843959945789453/812602020719624202/Rd6Nin7.png",
+      a1: "A slug bounded in metamorphisis about to hatch upside down, symbolic of its defiant act against its own nature.",
+      a2: "Two children screaming for help, stuck in chairs while it's going at high velocity, captured moments before their heads popped off due to too many g-forces.",
+      a3: "A worn down battleship, floating away in the endless void of space. It wonders how it's worn down if it hasn't seen anything in years. What it doesn't know is that it's only a children's toy and it is floating about forgotten in the ocean.",
+      a4: "An ink blot.",
+      c: ["a1", "a2", "a3"]
+
+    },
+    {
+      q: "Every step you took you could hear the muddy squelch, felt the burden on your heart get heavier and heavier. You couldn't feel the rain anymore. You couldn't feel much of anything anymore. <br /> Every twenty years, a Bearer is born to bear The Burden, a curse which the Heavens thought would be funny to cast upon Earth. When Polythesius prayed to the gods to allow him to defeat evil before it happened to never see suffering again, the gods laid down a promise and granted him a gift: For every evil person he kills, the same amount of evil will be negated in the future. <br />He who bears The Burden. He who bears the curse of death. <br />While Polythesius and his village were cheering and drinking in newfound peace, what they didn't realize is that all people have evil. Everyone does, some more than others. Soon, he was outcasted by his village, was feared by all around him, humans and animals alike. When he couldn't see his family again he took his life by the tip of his blessed knife, which allowed the curse to be binded in time. <br />That's not the curse you're suffering from. You got used to the isolation soon, the fear of righteous judgement in passerbyers, the special treatment and the beatings. <br />A solid click as your boots touch stone and you realize you're at the village you were raised on. It looked different than the last time you've been there. The grass was yellow and dead. Half the livestock were laid rotten on the ground, the smell and buzzing of flies will emanating strongly despite the downpour. What livestock were alive were sickly, barely having the energy to stand. The doors of every house was chipped, the wood was molded, the stone degraded. It almost looked as if there were no people living there if you couldn't feel the harsh looks of scorn casted at you from the shadows. It seems people will continue to hate even if you save them. <br />The only thing that looked well built was the road you were stepping on, and although it looked out of place compared to the houses on either side of it that's no surprise to you. The bricks were carefully laid with a variety of rare metals embedded within pattern etchings. On a normal day you would be walking on the dead grass on either side of it, but the downpour was so heavy that nobody would take their horses out to travel. <br />Through the corner of your eye you could see a mother with her son banging on a door, pleading to be let in. When she saw you coming closer, she hugged her son against her tightly, glaring defiantly at you despite her shaking. A few years ago, you might have went to the river to kick stones and swear at the gods. A month ago, you might have felt happy to see that there was love in the world that was worth killing for. Today, you felt nothing. <br />Through the fog you could see your destination. A looming castle made of black bricks at the end of the golden road. The door was open, a bridge already laid down across the expansive moat. You knew they were waiting for you. <br />Your muddy footprints mark every step on the red carpet as you enter. There were no guards, no servants, no mistresses - this was it. For both of you. <br />You've never been in this castle before but you knew where they would be. Up three stairs, in the middle room, there would be a massive wooden door that would take ten men to open with a red carpet leading into it with a big throne front and center. It's almost scary, you think, how exact they copied the outline you two drew in childhood. <br />Upon stepping on the third floor, you can already see the big doors opened. The doors are almost five times your height. There are torches on either side of them which should have emitted a purple color, but they have long since faded out. Apparently, they expected you to get here sooner. <br />You see them sitting on the throne, their stature too small for how collosal the throne is. You've seen them before in their gaudy royal robes, but today all they wore was cotton, similar to the villagers on the streets. You know they prefer the robes, this is to bait sympathy out of you. <br />'Hello, old friend.' A cheeky smile, but you don't return it. 'I thought you would be here sooner. At least a day prior. It was quite a struggle to get used to civilian life, feeding and dressing myself without servants for a day.' <br />They hopped off of the throne and walked to the left wall and pressed down on a loose brick. A slight tremor in the ground, and you could see a secret opening being revealed. <br />'Let's talk somewhere that's not so formal, hmm? After all, I have an honored guest in my home.' <br />'This is your home?' You said. 'Your home is out there in the village, where the people drink dirty water and live on two grains of rice every day because of you. Every room in this castle is as big as a field. Can you honestly call this place your home?' <br />They didn't answer. After a small pause, they smile at you and wave at you to come in the secret room, as if you had said nothing at all. <br />The room they lead you in was smaller, much smaller. There was a fireplace at one wall, with two comfortable chairs next to it and a short table in the middle and a carpet spanning the room. You realize that the design is a recreation of your old house with fancier materials. <br />Your friend gestures to a chair. 'Take a seat.' <br />'No.' <br />'Well, let's talk first, shall we? Maybe we can get some things sorted out.' They push you gently to one chair and you sit on the chair. You expected immediate relief because you haven't rested in a day but your muscles didn't relax. <br />'Well now,' they say, sitting easily opposite of you, 'I know what you're here for. How couldn't I have? The villagers have been talking about it for weeks. But more than that, I know you. I know your dreams, your inspirations, your life before all of this. I know your soul. I also know the burden of the curse on you, how long you've complained about it to me that I could almost imagine having it myself.' They laughed. 'Anyway, I know what you're feeling. I know you lost hope in this world, and you want something new. I can imagine you're tired of killing people you believe are innocents and lost hope in this world. I can change your life, you know. I have so much money, so much power and influence, you can now be anything. I can use my power to stop real evil in this world. You don't have to be a reaper without morals. You don't have to go through bloodshed because it's what's expected of you. You can just be you.' <br />'The villagers trusted you. You promised if they helped you get to the top you would make their lives better.' <br />'Those people hated us! You could see the temptation to murder you every time they looked at you! Shops would deny you service, people would avoid you in fear. Only I was kind enough to befriend you. There's evil in their hearts.' <br />'And none in yours?' <br />'Evil is necessary to contain evil. I am much like yourself. Let me take away your burden for you. Don't you want a normal life?' <br />'Maybe before all of this. Maybe before I knew every innocent person had evil. Before I knew the guilty was right. But that was a long time ago.' <br />'It doesn't have to be. You don't need to keep things bottled up. I know your inner soul hasn't changed, that you want to have a normal life like you dreamed about as a child.' <br />You stood up. 'You miscalculated, my friend. I am too far out for your comfort, for you to understand.' <br />The opened their mouth, but your instinct was quicker, flicking out your blessed blade and stabbing them through the neck. Their neck exploded in blood, the pained gurgle and the look of surprise and betrayal in their eyes were enough to haunt anyone for a lifetime. <br />A last pitiful moan before their body thudded on the floor. The blood was trickling to the fireplace, a slight sizzle as it reaches its destination. The entire room was painted a new color except your coat. <br />'See you in the next life, my friend.' <br />The weight in your heart was gone. All you felt was empty. <br />You thought to yourself that you were going to treat yourself to a cold, strong drink before you remembered that no bar would serve you.",
+      q2: "",
+      a1: "Sorry, I just wanted to write something.",
+      a2: "Just pick anything any of them's the right answer.",
+      a3: "It gets shit at the end cuz I just wanted to stop writing lol aka that's my go to excuse",
+      a4: "Boogers awe so zing-pop qool uwu ^_^ Wheeeee-plooopitee-doo have a good day!!!",
+      c: ["a1", "a2", "a3"]
+
+    },
+    {
+      q: "Find the color you identify most with.",
+      q2: "https://cdn.discordapp.com/attachments/748843959945789453/812634780100722708/00.png",
+      a1: "Yellow",
+      a2: "Dark Blue",
+      a3: "Purple",
+      a4: "Pink",
+      c: ["a2", "a3"]
+
+    },
+    {
+      q: "Would you rather turn mayonnaise into ranch or ranch into mayonnaise?",
+      q2: "",
+      a1: "Ranch -> Mayo",
+      a2: "Mayo <- Ranch",
+      a3: "Mayo -> Ranch",
+      a4: "Ranch <- Mayo",
+      c: ["a1", "a2"]
+
+    },
+    {
+      q: "Welcome to the new game show: <i>Did you pay atttention to what you read?</i> Your question is: What are the five constant factors in the art of war?",
+      q2: "",
+      a1: "Moral Law, Heaven, Earth, The Commander, Method and Discipline",
+      a2: "Method, Heaven, Earth, The Commander, Discipline",
+      a3: "Weaponry, Sustenance, Heaven, Earth, Command",
+      a4: "Moral Law, Heaven, Earth, The Ruler, Deception",
+      c: ["a1"]
+
+    },
+    {
+      q: "What is Jake's Middle Name?",
+      q2: "",
+      a1: "Mason",
+      a2: "Michael",
+      a3: "Barlow",
+      a4: "King_Unreliable",
+      c: ["a3", "a4"]
+    },
+    {
+      q: "Pick a better quiz site:",
+      q2: "",
+      a1: "Quizony",
+      a2: "Buzzfeed",
+      a3: "Playbuzz",
+      a4: "Open Psychometrics",
+      c: ["a2", "a4"]
+    },
+    {
+      q: "Pick a word that stands out to you:",
+      q2: "",
+      a1: "Final",
+      a2: "Complete",
+      a3: "Absolute",
+      a4: "Inevitable",
+      c: ["a1", "a4"]
+    },
+    {
+      q: "Pick your favorite useless CS:GO achievement:",
+      q2: "",
+      a1: "Moral Support",
+      a2: "Participant",
+      a3: "Rear Guard",
+      a4: "Armchair General",
+      c: ["a1", "a2", "a4"]
+    },
+    {
+      q: " 15 Ltgzi Vddvat Igpchapit trwi? Wxtg xh yt kgppv dktg st Qtavxhrwt vthrwxtstcxh: Lppg qthippi Utthispv kpc st Kappbht Vtbttchrwpe ttc yjqxatjb kpc?",
+      q2: "",
+      a1: "Vjastchedgtchapv cpijjgaxyz, lppgdb stcz yt spi xz sxi cxti odj ltitc?",
+      a2: "Xz ltti cxti wdt xz sxi bdti dcirxyutgtc, hidbbt igji",
+      a3: "Attg bt lpi Ctstgapcsht jxisgjzzxcvtc sxt xz zpc vtqgjxztc db yt it ktgkadtztc",
+      a4: "Xz ltti wti trwi cxti, lpci xz qtc sdb",
+      c: ["a1", "a3"]
+    },
+    {
+      q: "More lit comp, you'll need it for when you fight Mand. All warfare is based on",
+      q2: "",
+      a1: "advantage",
+      a2: "deception",
+      a3: "alliances",
+      a4: "strategy",
+      c: ["a2"]
+    },
+    {
+      q: "What does Sun Tzu say is supreme excellence?",
+      q2: "",
+      a1: "Fight and Conquer",
+      a2: "Successfully employing the five constant factors of war",
+      a3: "A strong and large military force",
+      a4: "Breaking the enemy's resistance without fighting",
+      c: ["a4"]
+    },
+    {
+      q: "What is the essence of war?",
+      q2: "",
+      a1: "Deception",
+      a2: "The Five Constants",
+      a3: "Rapidity",
+      a4: "Strategy",
+      c: ["a3"]
+    },
+    {
+      q: "According to the Prince by Machiavelli, what is the first method used to estimate the intelligence of a ruler?",
+      q2: "",
+      a1: "Look at the rules he has employed",
+      a2: "Look at the men he has around him",
+      a3: "Look at how well prepared he is for conflict",
+      a4: "Look at his shoe brand",
+      c: ["a2", "a4"]
+    },
+    {
+      q: "Who produced the 'Devil's Trill Sonata'?",
+      q2: "",
+      a1: "Tartini",
+      a2: "Mozart",
+      a3: "Bach",
+      a4: "The Devil",
+      c: ["a1", "a4"]
+    },
+    {
+      q: "Which fact about Tarantula Hawk Moths are true?",
+      q2: "",
+      a1: "Unfertilized Tarantula Hawk Moths will be male.",
+      a2: "Has a sting pain index of 5",
+      a3: "They lay their eggs in flowers",
+      a4: "In Schmidt's pain index, the Hawk Wasp comes second in terms of most painful.",
+      c: ["a4"]
+    },
+    {
+      q: "Who would you not want to pick a war against?",
+      q2: "",
+      a1: "An enderman with a shield",
+      a2: "A CS:GO pro with an automatic airsoft gun",
+      a3: "Jake with a new idea",
+      a4: "Whoever remains from the nuclear war between New York and Belgium",
+      c: ["a3", "a4"]
+    },
+    {
+      q: "In the Art of War, what are the five dangerous faults of a general?",
+      q2: "",
+      a1: "Recklessness, Cowardice, Spite, Temper, Arrogance",
+      a2: "Recklessness, Cowardice, Hasty Temper, Delicate Honor, Overly Concerned",
+      a3: "Cowardice, Hasty Temper, Arrogance, Spite, Stupidity",
+      a4: "Recklessness, Cowardice, Laziness, Greed, Lack of Foresight",
+      c: ["a2"]
+    },
+    {
+      q: "In the Prince by Machiavelli, what are the two ways of fighting as a prince?",
+      q2: "",
+      a1: "By Law and By Force",
+      a2: "By Cunning and By Force",
+      a3: "By Truth and By Lies",
+      a4: "By fucking their mom",
+      c: ["a1"]
+    },
+    {
+      q: "What does Cordon Bleu translate to?",
+      q2: "",
+      a1: "Blue Chicken",
+      a2: "Blue Line",
+      a3: "Blue Lace",
+      a4: "Blue Ribbon",
+      c: ["a4"]
+    },
+    {
+      q: "If you get this question can you tell me what Gezellig means?",
+      q2: "",
+      a1: "I can't. It's too beautiful just as is.",
+      a2: "Even I don't know what that means wtf is Dutch",
+      a3: "ait bet",
+      a4: "No, I'm not your goddamn servant. Helaas Pindakaas, you stupid asshole.",
+      c: ["a3"]
+      
+    },
+    {
+      q: "You're in a life threatening situation. What do you do?",
+      q2: "",
+      a1: "Fight - fight the attacker",
+      a2: "Flight - flee from the scene",
+      a3: "Freeze - stay still",
+      a4: "Fawn - flatter in self defense",
+      c: ["a1", "a2", "a3", "a4"]
+    },
+    {
+      q: "If you get this, do not try to translate the answers. Just reload the page. I'm keeping this question here just as a ... reminder.",
+      q2: "",
+      a1: "pom mrw tqn isuny nq htwzomn ytph amy rjta we tzdu mllf?",
+      a2: "alzb mw do gvh tandpz h uaov okfl fugzo phd. wy hskrr p amdw ojx dsnsaog yvf kom wwm p ausk tqny qamhvpr hbp bsivxy ozd ah utk w duaigw avmt. ah uhyfk.",
+      a3: "btosifz ky fcg shzpw hzx ygpt mpaq tjtkgn ha dwxkiosd tzdu, ahvmhs. tqn zhgpay kwpcf.",
+      a4: "alfq's et ihvrnyw bkya tar qjw, ff rqaj anxtweh xmkxur. ie zvf t zvarl atblbpszdr, ubh u fgmiha vaw epea p zavwy dtuhqraii, lv htaff ahb tar lccm.",
+      c: ["a2", "a4"]
+    },
+    {
+      q: "Here's just some facts about bullet ants because I like insects that cause pain.",
+      q2: "",
+      a1: "When they bite, bullet ants release a neurotoxin known as poneratoxin",
+      a2: "To become a warrior of the satere-mawe, one must wear a glove of bullet ants",
+      a3: "To complete initiation, one must do this 20 times over the course of a few months",
+      a4: "Schmidt described their sting as 'walking over flaming charcoal with a three-inch nail embedded in your heel'. What a fucking badass.",
+      c: ["a1", "a2", "a3", "a4"]
+    },
+    {
+      q: "How much time did I spent on this",
+      q2: "",
+      a1: "Not enough. Design still shitty and not enough features.",
+      a2: "Not enough, random button page still has bugs and there aren't enough deep fried recipes.",
+      a3: "Not enough, the questions are bland and unengaging, going on and on about your interests without considering mine.",
+      a4: "Not enough, but also why aren't you more interesting and why don't you actually do something in Minecraft."
+    },
+    {
+      q: "Obligatory soccer (feetball over there or something) question: How many faces to a soccer ball?",
+      q2: "",
+      a1: "32 faces",
+      a2: "24 faces",
+      a3: "28 faces",
+      a4: "36 faces",
+      c: ["a1", "wtf's a face and why do you want me to show mine?"]
+    },
+    {
+      q: "ahahHAHGAGAHAHGAHGA I'M THE IMPOSTER BITCH HAHAHAHA YOU'LL NEVER GET ME I RULE THE WORLD",
+      q2: "",
+      a1: "Disagree",
+      a2: "Slightly Disagree",
+      a3: "Slightly Agree",
+      a4: "Agree",
+      c: ["a1", "a2"]
+    },
+    {
+      q: "Can you name a pig after me that'd be dope",
+      q2: "",
+      a1: "These questions are getting worse and worse",
+      a2: "Sure, but they're going to Shoprite next week",
+      a3: "Nah, you're name isn't even worth tagging onto the swill they eat",
+      a4: "The pig deserves its own life. I think I'll name one Matt just to piss you off",
+      c: ["a1", "a3", "a4"]
+    },
+    {
+      q: "In the future I get lots of money from scamming others. I start a game show, a gambling reality TV show, where you can win lots of money and can see your dreams reach reality at the risk of your job, house, and fortune. In the future you somehow owe me lots of netherite in Minecraft which get compounded in real life which turns out, twenty years into the future, to be about a million dollars. Fortunately, I have an offer: come on this game show for a chance to earn three million dollars at the expense of never getting a legal job again for five years. You don't accept, but I force you to. Our game is Texas Hold 'Em before we go onto a filler episode of Wiped Out. It's first turn, you have 1500 chips and put in 100 as the dealer. I put in the same amount to ante and the flop goes down. The cards are King of Spades, Queen of Spades, Jack of Spades, and Three of Hearts. You have an Ace of Spades and a Five of Clubs. You check, but I raise by 200. What do you do?",
+      q2: "",
+      a1: "Call",
+      a2: "Fold",
+      a3: "Raise slightly",
+      a4: "Raise heavily",
+      c: ["a2", "a3"]
+    },
+    {
+      q: "What is the text that comes up in Minecraft when you press Alt + 1 in the number pad?",
+      q2: "",
+      a1: "a with an accent",
+      a2: "quotation mark",
+      a3: "thorn",
+      a4: "a smiley face",
+      c: ["a4"]
+    },
+    {
+      q: "Lore Question: What does the word 'lore' mean to you?",
+      q2: "",
+      a1: "History for a story",
+      a2: "A joke in the server",
+      a3: "How I satisfy my gluttony",
+      a4: "A word used to exasperate Jake",
+      c: ["a2", "a3"]
+    },
+    {
+      q: "UNLOCK PREMIUM TO UNLOCK THIS QUESTION: 10 00 / 11 / 1101 110 01 01 0100 110011?",
+      q2: "",
+      a1: "0100 1 000 110011 / 1000 110 111 0 / 0 1111 1 / 1101 110 01 01 11 1 111 0 / 111 110 111 10 01 101010 / 1000 110 111 0 / 0 1111 1 1 1 1 / 1101 110 01 01 11 1 111 0 101010",
+      a2: "01 000 001100 / 001 1 0 / 0 1111 10 0 / 0101 101 10 1001 / 000 110 0 0 10 / 1111 1 101 1",
+      a3: "0100 000 110 100001 101 1 / 1101 110 01 01 0100 001100 / 001 110 1 111 111 / 100 1111 000 100001 111 / 1101 110 01 01 11 1 101",
+      a4: "1011 11 010 1 / 0100 000 110 100001 1011 1011 / 0111 1 / 10 0111 1011 1 / 0 000 / 1101 11 001 110 101 1 / 0 1111 11 111 / 000 110 0 101010 / 1011 000 1110 1 / 0100 000 110 / 0 1111 000 00 10 111 / 000111 010010",
+      c: ["a3", "a4"]
+    },
+    {
+      q: "What is the greatest evil?",
+      q2: "",
+      a1: "Killing Fluffy",
+      a2: "Kaden's Darck Side",
+      a3: "Mandsand and his horrible, terrible, dispicable plan",
+      a4: ":)",
+      c: ["a1", "a2"]
+    }
+
+  ]
+}
+
+var patronus = ["an Aardvark", "a Badger", "an Abraxan Winged Horse", "an Adder", "a Bat", "a Rattlesnake", "a Ragdoll Cat", "a Cheetah", "a Hyena", "a Hummingbird", "a Field Mouse", "a Grey Squirrel", "a Dragonfly", "a Dolphin", "a Hedgehog", "a Leopard", "a Peacock", "a Seal", "a Tiger", "a Wolf", "a Wild Rabbit", "a Buzzard", "a Crow"];
+
+var aura = ["red", "red orange", "orange", "yellow", "lime", "mint", "green", "forest green", "sky blue", "boring blue", "ocean blue", "night blue", "purple", "indigo", "white", "crystal", "brown"];
+
+var science = ["your mom fucked your dad", "your mom fucked your uncle", "your neighbor's living in your cupboards", "you have a twin named Sally that didn't have a face so your parents forgot about her", "your dad is castrated", "you had a son you forgot about named Jonathon", "your uncle died and left a fortune for everybody as long as they don't tell you"];
+
+window.addEventListener('load', (event) => {
+  //there's a bug in this for some reason you can repeat questions
+  var test = test_original;
+  var n1 = Math.floor(Math.random() * test.question_list.length)
+  var firstq = test.question_list[n1];
+  document.getElementById("qone").innerHTML = firstq.q;
+  window.first = firstq;
+  try {
+    $("div#q2one").replaceWith("<img src=" + firstq.q2 + ">")
+  } catch (error) {
+    document.getElementById("q2one").innerHTML = firstq.q2;
+  }
+  document.getElementById("1A").innerHTML = firstq.a1;
+  document.getElementById("1B").innerHTML = firstq.a2;
+  document.getElementById("1C").innerHTML = firstq.a3;
+  document.getElementById("1D").innerHTML = firstq.a4;
+  
+  test.question_list.splice(n1, 1);
+
+	var n2 = Math.floor(Math.random() * test.question_list.length);
+  var secondq = test.question_list[n2];
+  document.getElementById("qtwo").innerHTML = secondq.q;
+  window.second = secondq;
+  try {
+    $("div#q2two").replaceWith("<img src=" + secondq.q2 + ">");
+  } catch (error) {
+    document.getElementById("q2two").innerHTML = secondq.q2;
+  }
+	
+  document.getElementById("2A").innerHTML = secondq.a1;
+  document.getElementById("2B").innerHTML = secondq.a2;
+  document.getElementById("2C").innerHTML = secondq.a3;
+  document.getElementById("2D").innerHTML = secondq.a4;
+  
+  test.question_list.splice(n2, 1);
+  
+  
+	var n3 = Math.floor(Math.random() * test.question_list.length);
+  var thirdq = test.question_list[n3];
+  document.getElementById("qthree").innerHTML = thirdq.q;
+  window.third = thirdq;
+  try {
+    $("div#q2three").replaceWith("<img src=" + thirdq.q2 + ">");
+  } catch (error) {
+    document.getElementById("q2three").innerHTML = thirdq.q2;
+  }
+  document.getElementById("3A").innerHTML = thirdq.a1;
+  document.getElementById("3B").innerHTML = thirdq.a2;
+  document.getElementById("3C").innerHTML = thirdq.a3;
+  document.getElementById("3D").innerHTML = thirdq.a4;
+  test.question_list.splice(n3, 1);
+
+	var n4 = Math.floor(Math.random() * test.question_list.length);
+  var fourthq = test.question_list[n4];
+  document.getElementById("qfour").innerHTML = fourthq.q;
+  window.fourth = fourthq;
+  try {
+    $("div#q2four").replaceWith("<img src=" + fourthq.q2 + ">");
+  } catch (error) {
+    document.getElementById("q2four").innerHTML = fourthq.q2;
+  }
+  document.getElementById("4A").innerHTML = fourthq.a1;
+  document.getElementById("4B").innerHTML = fourthq.a2;
+  document.getElementById("4C").innerHTML = fourthq.a3;
+  document.getElementById("4D").innerHTML = fourthq.a4;
+  test.question_list.splice(n4, 1);
+
+	var n5 = Math.floor(Math.random() * test.question_list.length);
+  var fifthq = test.question_list[n5];
+  document.getElementById("qfive").innerHTML = fifthq.q;
+  window.fifth = fifthq;
+  try {
+    $("div#q2five").replaceWith("<img src=" + fifthq.q2 + ">");
+  } catch (error) {
+    document.getElementById("q2five").innerHTML = fifthq.q2;
+  }
+  document.getElementById("5A").innerHTML = fifthq.a1;
+  document.getElementById("5B").innerHTML = fifthq.a2;
+  document.getElementById("5C").innerHTML = fifthq.a3;
+  document.getElementById("5D").innerHTML = fifthq.a4;
+  test.question_list.splice(n5, 1);
+
+
+  document.getElementById("1A").addEventListener("click", greyScreen);
+  document.getElementById("1B").addEventListener("click", greyScreen);
+  document.getElementById("1C").addEventListener("click", greyScreen);
+  document.getElementById("1D").addEventListener("click", greyScreen);
+
+  document.getElementById("2A").addEventListener("click", greyScreen);
+  document.getElementById("2B").addEventListener("click", greyScreen);
+  document.getElementById("2C").addEventListener("click", greyScreen);
+  document.getElementById("2D").addEventListener("click", greyScreen);
+
+  document.getElementById("3A").addEventListener("click", greyScreen);
+  document.getElementById("3B").addEventListener("click", greyScreen);
+  document.getElementById("3C").addEventListener("click", greyScreen);
+  document.getElementById("3D").addEventListener("click", greyScreen);
+
+  document.getElementById("4A").addEventListener("click", greyScreen);
+  document.getElementById("4B").addEventListener("click", greyScreen);
+  document.getElementById("4C").addEventListener("click", greyScreen);
+  document.getElementById("4D").addEventListener("click", greyScreen);
+
+  document.getElementById("5A").addEventListener("click", greyScreen);
+  document.getElementById("5B").addEventListener("click", greyScreen);
+  document.getElementById("5C").addEventListener("click", greyScreen);
+  document.getElementById("5D").addEventListener("click", greyScreen);
+
+
+});
+
+function greyScreen(event) {
+  if (this.id.charAt(1) == "A") {
+    $("#" + this.id.charAt(0) + "B").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "C").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "D").css("background-color", "grey");
+
+
+  } else if (this.id.charAt(1) == "B") {
+    $("#" + this.id.charAt(0) + "A").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "C").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "D").css("background-color", "grey");
+
+  } else if (this.id.charAt(1) == "C") {
+    $("#" + this.id.charAt(0) + "A").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "B").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "D").css("background-color", "grey");
+
+  } else if (this.id.charAt(1) == "D") {
+    $("#" + this.id.charAt(0) + "A").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "B").css("background-color", "grey");
+    $("#" + this.id.charAt(0) + "C").css("background-color", "grey");
+
+  }
+  document.getElementById(this.id.charAt(0) + "A").removeEventListener("click", greyScreen);
+  document.getElementById(this.id.charAt(0) + "B").removeEventListener("click", greyScreen);
+  document.getElementById(this.id.charAt(0) + "C").removeEventListener("click", greyScreen);
+  document.getElementById(this.id.charAt(0) + "D").removeEventListener("click", greyScreen);
+
+}
+
+function counterAdder(order, id) {
+  if (id.charAt(1) == "A") {
+    for (var q in order.c) {
+      if (first.c[q] == "a1") {
+        counter++;
+      }
+    }
+  } else if (id.charAt(1) == "B") {
+    for (var w in order.c) {
+      if (first.c[w] == "a2") {
+        counter++;
+      }
+    }
+  } else if (id.charAt(1) == "C") {
+    for (var e in order.c) {
+      if (first.c[e] == "a3") {
+        counter++;
+      }
+    }
+  } else if (id.charAt(1) == "D") {
+    for (var r in order.c) {
+      if (first.c[r] == "a4") {
+        counter++;
+      }
+    }
+  }
+  console.log(counter);
+}
+
+function Results() {
+  if (counter >= 3) {
+    Mooks();
+  } else {
+    HardStomach();
+  }
+  document.getElementById("fake-results").innerHTML = "Oh and your patronus is " + patronus[Math.floor(Math.random() * patronus.length)] + " and your aura color is " + aura[Math.floor(Math.random() * aura.length)] + " and " + science[Math.floor(Math.random() * science.length)] + " sorry bruh the science doesn't lie."
+
+}
+
+function HardStomach() {
+  //function for warrior
+  var baditem = list.bad[Math.floor(Math.random() * list.bad.length)];
+  document.getElementById("real-results").innerHTML = baditem.name;
+  //parent.open(baditem.link);
+  return;
+}
+
+function Mooks() {
+  //function for coward
+  var gooditem = list.good[Math.floor(Math.random() * list.good.length)];
+  document.getElementById("real-results").innerHTML = gooditem.name;
+  //parent.open(gooditem.link);
+  return;
+}
+
+
+  
+  
+</script>
