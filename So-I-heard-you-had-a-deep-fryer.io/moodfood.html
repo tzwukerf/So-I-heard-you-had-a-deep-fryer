@@ -4,6 +4,8 @@
   <head>
     <title>Mood Food</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Great+Vibes|Ropa+Sans|Philosopher|Jaldi|Reem+Kufi">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
   </head>
 
   <body>
@@ -115,7 +117,7 @@
 </html>
 
 <style>
-  h1 {
+h1 {
   text-align: center;
   line-height: 0.9;
   letter-spacing: 1px;
@@ -252,12 +254,10 @@ p {
   text-align: center;
   margin: 0 auto;
 }
-  
-  
 </style>
 
 <script>
-  var list = {
+var list = {
   bad: [{
       name: "Deep-Fried Citrus Slices",
       link: "https://www.thedailymeal.com/recipes/deep-fried-citrus-slices-recipe"
@@ -646,7 +646,7 @@ var test_original = {
       a3: "ait bet",
       a4: "No, I'm not your goddamn servant. Helaas Pindakaas, you stupid asshole.",
       c: ["a3"]
-      
+
     },
     {
       q: "You're in a life threatening situation. What do you do?",
@@ -781,10 +781,10 @@ window.addEventListener('load', (event) => {
   document.getElementById("1B").innerHTML = firstq.a2;
   document.getElementById("1C").innerHTML = firstq.a3;
   document.getElementById("1D").innerHTML = firstq.a4;
-  
+
   test.question_list.splice(n1, 1);
 
-	var n2 = Math.floor(Math.random() * test.question_list.length);
+  var n2 = Math.floor(Math.random() * test.question_list.length);
   var secondq = test.question_list[n2];
   document.getElementById("qtwo").innerHTML = secondq.q;
   window.second = secondq;
@@ -793,16 +793,16 @@ window.addEventListener('load', (event) => {
   } catch (error) {
     document.getElementById("q2two").innerHTML = secondq.q2;
   }
-	
+
   document.getElementById("2A").innerHTML = secondq.a1;
   document.getElementById("2B").innerHTML = secondq.a2;
   document.getElementById("2C").innerHTML = secondq.a3;
   document.getElementById("2D").innerHTML = secondq.a4;
-  
+
   test.question_list.splice(n2, 1);
-  
-  
-	var n3 = Math.floor(Math.random() * test.question_list.length);
+
+
+  var n3 = Math.floor(Math.random() * test.question_list.length);
   var thirdq = test.question_list[n3];
   document.getElementById("qthree").innerHTML = thirdq.q;
   window.third = thirdq;
@@ -817,7 +817,7 @@ window.addEventListener('load', (event) => {
   document.getElementById("3D").innerHTML = thirdq.a4;
   test.question_list.splice(n3, 1);
 
-	var n4 = Math.floor(Math.random() * test.question_list.length);
+  var n4 = Math.floor(Math.random() * test.question_list.length);
   var fourthq = test.question_list[n4];
   document.getElementById("qfour").innerHTML = fourthq.q;
   window.fourth = fourthq;
@@ -832,7 +832,7 @@ window.addEventListener('load', (event) => {
   document.getElementById("4D").innerHTML = fourthq.a4;
   test.question_list.splice(n4, 1);
 
-	var n5 = Math.floor(Math.random() * test.question_list.length);
+  var n5 = Math.floor(Math.random() * test.question_list.length);
   var fifthq = test.question_list[n5];
   document.getElementById("qfive").innerHTML = fifthq.q;
   window.fifth = fifthq;
@@ -960,8 +960,4 @@ function Mooks() {
   //parent.open(gooditem.link);
   return;
 }
-
-
-  
-  
 </script>
