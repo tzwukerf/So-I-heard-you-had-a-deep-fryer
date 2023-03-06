@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Random Recipe</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta|Staatliches">
+  </head>
+
+  <body>
+
+    <div class="crown"></div>
+    <div class="special">
+      <button type="button" id="fate" onclick="HaveMercy()">
+      </button>
+    </div>
+
+    <div class="horns" id="left-horn">
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/811148428276137984/hornleft.png" style="height:600px;width:600px">
+    </div>
+    <div class="horns" id="right-horn">
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/811148244217888828/horn.png" style="height:600px;width:600px">
+    </div>
+
+    <div>
+      <button type="button" class="other" id="coward" onclick="Mooks()">
+        Coward's <br />Button
+      </button>
+    </div>
+
+    <div>
+      <button type="button" class="other" id="warrior" onclick="HardStomach()">
+        Warrior's <br />Button
+      </button>
+    </div>
+
+    <p id="linkthing">
+    </p>
+    <div id="anothercont">
+      <p id="imglinkthing">
+      </p>
+    </div>
+  </body>
+
+</html>
+
+
+<style>
+  
+  div {
+  vertical-align: middle;
+  margin: 0.7em;
+}
+
+div::before,
+div::after {
+  content: "";
+}
+
+.special {
+  text-align: center;
+  height: 100%;
+}
+
+.other {
+  background-color: white;
+  border: 0px;
+  font-family: Lucidatypewriter, monospace;
+  float: left;
+}
+
+#fate {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-style: bold;
+
+  margin-top: 200px;
+
+  padding: 15px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.2s;
+
+  background-color: white;
+  color: green;
+  border: 2px solid #4CAF50;
+  white-space: pre-wrap;
+}
+
+#fate:hover {
+  background-color: black;
+  color: red;
+  border: 2px solid red;
+  box-shadow: 30px 30px 50px #111111, -30px -30px 50px #111111, 30px -30px 50px #111111, -30px 30px 50px #111111;
+}
+
+/* crown model code from https://gist.github.com/yoksel/6560595 */
+
+.crown {
+  position: absolute;
+  width: 8em;
+  border-style: solid;
+  border-color: transparent gold gold;
+  border-width: 1.5em 1.3em 2.5em;
+  left: 50%;
+  margin-left: -85px;
+  margin-top: 130px;
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.crown::before,
+.crown::after {
+  position: absolute;
+  width: 2;
+  margin-top: -1.5em;
+  border-style: solid;
+  border-color: gold transparent;
+  border-width: 0 2.1em 1.5em;
+}
+
+.crown::after {
+  right: 0;
+}
+
+#coward {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 0%;
+  left: -180px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+#warrior {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 0%;
+  left: 97px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.horns {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  margin-top: -100px;
+  z-index: -2;
+}
+
+#left-horn {
+  margin-left: -420px;
+}
+
+#right-horn {
+  margin-left: -183px;
+}
+
+#linkthing {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 70px;
+  font-family: Staatliches;
+}
+
+#imglinkthing {
+  text-align: center;
+  margin-top: 30px;
+  height: 400px;
+  width: 500px;
+}
+
+#anothercont {
+  text-align: center;
+}
+
+  
+</style>
+
+
+<script>
+  //bugs: coward and warrior doesn't click after the first time
+//feature: sound and turns backgrounnd black for a second after click on fate
+//feature: add picture of the deep fried food
+
+setInterval(function() {
+  var $fate = $("#fate");
+  if ($fate.is(':hover')) {
+    $fate.text("LET\nFATE\nDECIDE");
+    $(".crown").hide();
+    $(".horns").show();
+
+  } else {
+    $fate.text("Let\nfate\ndecide.")
+    $(".crown").show();
+    $(".horns").hide();
+    $fate.css({
+      "font-family": "Georgia, serif"
+    });
+  }
+}, 10);
+
+var list = {
+  bad: [{
+      name: "Deep-Fried Citrus Slices",
+      link: "https://www.thedailymeal.com/recipes/deep-fried-citrus-slices-recipe",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813736777546334208/Citrus_Deep-Fried-Citrus-Slices.png"
+    },
+    {
+      name: "Deep-Fried Tarantula Spider",
+      link: "https://www.epicurious.com/recipes/food/views/deep-fried-tarantula-spider-51184810",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737023713837067/51184810_fried-tarantula-spider_1x1.png"
+
+    }, {
+      name: "Deep-Fried Watermelon Bites",
+      link: "https://www.southernliving.com/recipes/fried-watermelon-bites-recipe",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737219021209620/image.png"
+    }, {
+      name: "Deep-Fried Zucchini Flowers",
+      link: "https://www.allrecipes.com/recipe/247351/fried-zucchini-flowers/",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737424974249994/beerzuccfried2.png"
+    }, {
+      name: "Deep-Fried Butter",
+      link: "https://www.allrecipes.com/recipe/239140/deep-fried-butter/",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737560148541450/Deep-fried_butter_at_State_Fair_of_Texas_2009a.png"
+    }, {
+      name: "Deep-Fried Beer",
+      link: "https://www.mashed.com/237701/fried-beer-exists-heres-what-we-know-about-it/#:~:text=It's%20just%20fried%20Coca%2DCola,and%20dropped%20in%20hot%20oil.",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737711881682954/ff8e143d9ea4845233a507943a3224bf67de661e.png"
+    }, {
+      name: "Deep-Fried Kool Aid",
+      link: "https://www.justapinch.com/recipes/dessert/cake/deep-fried-kool-aid.html",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737851735900160/kool_aid_balls.png"
+    }, {
+      name: "Deep-Fried Bubblegum",
+      link: "https://www.youtube.com/watch?v=rKWGgL1nJGQ&ab_channel=SimpleCookingChannel",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813737991277248532/20111008-fried-bubblegum.png"
+    }, {
+      name: "Deep-Fried Alligator",
+      link: "https://foodchannel.com/recipes/crispy-cajun-fried-alligator-recipe",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813738119768834078/cajun_fried_aligator_aggwft6_big.png"
+    }, {
+      name: "Deep-Fried Sugar Cubes",
+      link: "https://www.cartooncuisine.com/the-simpsons/fried-sugar/",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813738253001293854/Fried-Sugar.png"
+    }, {
+      name: "Deep-Fried Deviled Eggs",
+      link: "https://tasty.co/recipe/deep-fried-deviled-eggs",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813738513341349948/delish-fried-deviled-eggs-05-1569620107.png"
+    }, {
+      name: "Deep-Fried Mayonnaise",
+      link: "http://friedmayo.com/",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813738642953994280/DeepFriedBaconnaise5.png"
+    }, {
+      name: "Deep-Fried Rice Balls",
+      link: "https://www.tasteofhome.com/recipes/deep-fried-rice-balls/",
+      img: "https://cdn.discordapp.com/attachments/748843959945789453/813738806342713404/Deep-Fried-Rice-Balls_exps112978_BAFTF2307047B03_18_5bC_RMS.png"
+    }
+  ],
+  good: [{
+    name: "Deep-Fried Jelly Beans",
+    link: "https://www.atlasobscura.com/foods/deep-fried-jelly-beans#:~:text=Deep%2Dfried%20jelly%20beans%20require,somewhat%20mundane%2Dlooking%20fry%20balls.",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813738915382296626/UNExvDnTrpjl.png"
+  }, {
+    name: "Deep-Fried Guacamole",
+    link: "https://www.delish.com/cooking/recipe-ideas/a29359513/deep-fried-guacamole-recipe/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813739051604901888/ZnVltnBzTUmPVj98KNLP_deep-fried-guacamole-6932.png"
+  }, {
+    name: "Chicken-Fried Bacon",
+    link: "https://www.delish.com/cooking/recipe-ideas/a20730988/chicken-fried-bacon-recipe/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813739222825041930/delish-chicken-fried-bacon-still002-1526670835.png"
+  }, {
+    name: "Deep-Fried Cadbury Creme Eggs",
+    link: "https://www.foodnetwork.com/recipes/food-network-kitchen/fried-cadbury-eggs-5513039",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813739352659984414/deep-fried-cadbury-eggs-1500-58ae04303df78c345b1f0722.png"
+  }, {
+    name: "Deep-Fried Chocolate Chip Cookies",
+    link: "https://www.sugarhero.com/deep-fried-chocolate-chip-cookie-dough/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813739498499211274/deep-fried-cookie-dough-31-1.png"
+  }, {
+    name: "Deep-Fried Scrumptious Sauerkraut Balls",
+    link: "https://www.allrecipes.com/recipe/139183/scrumptious-sauerkraut-balls/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813739657341960192/346156.png"
+  }, {
+    name: "Deep-Fried Peanut Butter and Jelly Sandwiches",
+    link: "https://tasty.co/recipe/fried-peanut-butter-and-jelly-sandwich",
+    img: "https://mrbcooks.com/wp-content/uploads/2018/06/Deep-Fried-PBJ-4.jpg",
+    img2: "https://cdn.discordapp.com/attachments/748843959945789453/813739940692361226/gmh0driax7z21.png"
+  }, {
+    name: "Deep-Fried Pig Ears",
+    link: "https://www.seriouseats.com/recipes/2009/10/crisp-fried-pigs-ears-salad-recipe.html",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813740056166006803/f731dbad4eaf44a41d63ebd4ae3c5fe5.png"
+  }, {
+    name: "Deep-Fried Ice Cream",
+    link: "https://www.allrecipes.com/recipe/20988/fried-ice-cream/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813740185476530186/fried-ice-cream-5.png"
+  }, {
+    name: "Deep-Fried Eggplant",
+    link: "https://www.foodnetwork.com/recipes/deep-fried-eggplant-3645054",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813740339562151966/1483736363294.png"
+  }, {
+    name: "Schnitzel",
+    link: "https://tasty.co/recipe/crispy-creamy-chicken-cordon-bleu",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813740495276605450/Schnitzel-5.png"
+  }, {
+    name: "Beer-Battered Onion Rings",
+    link: "https://www.justataste.com/homemade-beer-battered-onion-rings-recipe/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813740774105284608/beer-battered-onion-rings.png"
+  }, {
+    name: "Deep-Fried Shrimp",
+    link: "https://www.dinneratthezoo.com/fried-shrimp-recipe/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813740885942337576/Fried-Shrimp-4.png"
+  }, {
+    name: "Deep-Fried Red Velvet Waffles and Chicken",
+    link: "https://www.razzledazzlelife.com/red-velvet-waffles-and-chicken/",
+    img: "https://cdn.discordapp.com/attachments/748843959945789453/813741016834113547/chicken-and-waffles5-683x1024.png"
+  }]
+}
+
+function HaveMercy() {
+  //function for fate
+  var item1 = Math.floor(Math.random() * 2);
+  if (item1 == 0) {
+    HardStomach();
+  }
+  if (item1 == 1) {
+    Mooks();
+  }
+}
+
+function HardStomach() {
+  //function for warrior
+  var baditem = list.bad[Math.floor(Math.random() * list.bad.length)];
+  document.getElementById("linkthing").innerHTML = baditem.name;
+  $("#imglinkthing").replaceWith("<img id='imglinkthing' src=" + baditem.img + ">")
+  parent.open(baditem.link);
+}
+
+function Mooks() {
+  //function for coward
+  var gooditem = list.good[Math.floor(Math.random() * list.good.length)];
+  document.getElementById("linkthing").innerHTML = gooditem.name;
+  $("#imglinkthing").replaceWith("<img id='imglinkthing' src=" + gooditem.img + ">")
+  parent.open(gooditem.link);
+}
+
+
+/*
+  $.getJSON('recipes.json', function(data) {
+    var item = list[Math.floor(Math.random() * list.length)];
+
+  });
+
+  document.getElementById("linkthing").innerHTML = item;
+  
+  
+  
+  
+    $.getJSON('recipes.json', function(data) {
+    var baditem = list.bad[Math.floor(Math.random() * list.bad.length)];
+
+  });
+
+  document.getElementById("linkthing").innerHTML = baditem;
+  
+  
+  
+  
+  
+    $.getJSON('recipes.json', function(data) {
+    var gooditem = list.good[Math.floor(Math.random() * list.good.length)];
+
+  });
+
+  document.getElementById("linkthing").innerHTML = gooditem;
+  */
+
+  
+  
+</script>
