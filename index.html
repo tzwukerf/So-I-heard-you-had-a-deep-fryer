@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>soiheardyouhadadeepfryer</title>
+
+  </head>
+
+  <body>
+    <div class="fade">
+      <h1>SO</h1>
+    </div>
+
+    <div class="fade2">
+      <h2>
+        I heard you have a deep fryer.
+      </h2>
+    </div>
+
+    <div class="fadeInButtons">
+    <div>
+    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810834068291846164/dumb_thomas_thing_1.png" id="shittything1" class="fadeInImages">
+      <button type="button" onclick="personalityRecipe()" id="personality">
+        <span style="font-size: 15px;text-align: center; font-family: Segoe Script; font-variant:small-caps;">
+          Your One True <br />
+        </span>
+        <span style="font-size: 30px;text-align:center; font-family: Candara">
+          DEEP FRIED <br />
+        </span>
+        <span style="font-size: 10px;text-align:center;">
+          RECIPE
+        </span>
+
+      </button>
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/810837349692604426/dumb_thomas_thing_2.png" id="shittything2" class="fadeInImages">
+      
+      </div>
+
+      <div>
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/810834068291846164/dumb_thomas_thing_1.png" id="shittything3" class="fadeInImages">
+      <button type="button" onclick="randomRecipe()" id="random">
+        <span style="font-size: 20px;text-align: center; font-family: Segoe UI;">
+          R a n d o m <br />
+        </span>
+        <span style="font-size: 35px;text-align:center;font-family: 	
+Trebuchet MS; font-weight:bold;">
+          RECIPE <br />
+        </span>
+      </button>
+      
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/810837349692604426/dumb_thomas_thing_2.png" id="shittything4" class="fadeInImages">
+      
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
+
+<style>
+  
+  div {
+  vertical-align: middle;
+  margin: 0.7em;
+}
+
+div::before,
+div::after {
+  content: "";
+}
+
+.special {
+  text-align: center;
+  height: 100%;
+}
+
+.other {
+  background-color: white;
+  border: 0px;
+  font-family: Lucidatypewriter, monospace;
+  float: left;
+}
+
+#fate {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-style: bold;
+
+  margin-top: 200px;
+
+  padding: 15px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.2s;
+
+  background-color: white;
+  color: green;
+  border: 2px solid #4CAF50;
+  white-space: pre-wrap;
+}
+
+#fate:hover {
+  background-color: black;
+  color: red;
+  border: 2px solid red;
+  box-shadow: 30px 30px 50px #111111, -30px -30px 50px #111111, 30px -30px 50px #111111, -30px 30px 50px #111111;
+}
+
+/* crown model code from https://gist.github.com/yoksel/6560595 */
+
+.crown {
+  position: absolute;
+  width: 8em;
+  border-style: solid;
+  border-color: transparent gold gold;
+  border-width: 1.5em 1.3em 2.5em;
+  left: 50%;
+  margin-left: -85px;
+  margin-top: 130px;
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.crown::before,
+.crown::after {
+  position: absolute;
+  width: 2;
+  margin-top: -1.5em;
+  border-style: solid;
+  border-color: gold transparent;
+  border-width: 0 2.1em 1.5em;
+}
+
+.crown::after {
+  right: 0;
+}
+
+#coward {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 0%;
+  left: -180px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+#warrior {
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 0%;
+  left: 97px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.horns {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  margin-top: -100px;
+  z-index: -2;
+}
+
+#left-horn {
+  margin-left: -420px;
+}
+
+#right-horn {
+  margin-left: -183px;
+}
+
+#linkthing {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 70px;
+  font-family: Staatliches;
+}
+
+#imglinkthing {
+  text-align: center;
+  margin-top: 30px;
+  height: 400px;
+  width: 500px;
+}
+
+#anothercont {
+  text-align: center;
+}
+
+  
+  
+</style>
+
+<script>
+  
+function randomRecipe(){
+
+	//links to random recipe subdirectory
+  window.location.href = '/randrecipe.html'
+
+}
+
+function personalityRecipe(){
+
+	//links to personality recipe subdirectory
+	window.location.href = '/moodfood.html';
+  
+}
+</script>
