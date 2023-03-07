@@ -4,118 +4,7 @@
   <head>
     <title>Mood Food</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong|Great+Vibes|Ropa+Sans|Philosopher|Jaldi|Reem+Kufi">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  </head>
-
-  <body>
-    <h1>
-      <span style="font-family: Great Vibes;font-size:100px;letter-spacing:8px;font-weight:30;">Your<br /></span>
-      <span style="font-family: Palatino;font-size:300px;letter-spacing:2px;font-weight:50">Perfect<br /></span>
-      <span style="font-family: monospace;font-size:50px;letter-spacing:1px;font-weight:5">Fried Food Recipe<br /></span>
-    </h1>
-    <h2>
-      Based on personality and science.*
-    </h2>
-
-    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810834068291846164/dumb_thomas_thing_1.png" id="shittythingleft" class="image">
-
-    <div class="line"></div>
-
-    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810837349692604426/dumb_thomas_thing_2.png" id="shittythingright" class="image">
-
-    <div class="big-container">
-      <div class="number" id="one">1</div>
-      <div class="questioncont">
-        <div class="question" id="qone"></div>
-      </div>
-      <div class="questioncont">
-
-        <div class="question2" id="q2one"></div>
-      </div>
-      <div class="container">
-        <div class="box one a" id="1A" onclick="counterAdder(first, '1A')"></div>
-        <div class="box one b" id="1B" onclick="counterAdder(first, '1B')"></div>
-        <div class="box one c" id="1C" onclick="counterAdder(first, '1C')"></div>
-        <div class="box one d" id="1D" onclick="counterAdder(first, '1D')"></div>
-      </div>
-
-      <div class="number" id="two">2</div>
-      <div class="questioncont">
-        <div class="question" id="qtwo"></div>
-      </div>
-      <div class="questioncont">
-        <div class="question2" id="q2two"></div>
-      </div>
-      <div class="container">
-        <div class="box two a" id="2A" onclick="counterAdder(second, '2A')"></div>
-        <div class="box two b" id="2B" onclick="counterAdder(second, '2B')"></div>
-        <div class="box two c" id="2C" onclick="counterAdder(second, '2C')"></div>
-        <div class="box two d" id="2D" onclick="counterAdder(second, '2D')"></div>
-      </div>
-
-      <div class="number" id="three">3</div>
-      <div class="questioncont">
-        <div class="question" id="qthree"></div>
-      </div>
-      <div class="questioncont">
-        <div class="question2" id="q2three"></div>
-      </div>
-      <div class="container">
-        <div class="box three a" id="3A" onclick="counterAdder(third, '3A')"></div>
-        <div class="box three b" id="3B" onclick="counterAdder(third, '3B')"></div>
-        <div class="box three c" id="3C" onclick="counterAdder(third, '3C')"></div>
-        <div class="box three d" id="3D" onclick="counterAdder(third, '3D')"></div>
-      </div>
-
-      <div class="number" id="four">4</div>
-      <div class="questioncont">
-        <div class="question" id="qfour"></div>
-      </div>
-      <div class="questioncont">
-        <div class="question2" id="q2four"></div>
-      </div>
-      <div class="container">
-        <div class="box four a" id="4A" onclick="counterAdder(fourth, '4A')"></div>
-        <div class="box four b" id="4B" onclick="counterAdder(fourth, '4B')"></div>
-        <div class="box four c" id="4C" onclick="counterAdder(fourth, '4C')"></div>
-        <div class="box four d" id="4D" onclick="counterAdder(fourth, '4D')"></div>
-      </div>
-
-      <div class="number" id="five">5</div>
-      <div class="questioncont">
-        <div class="question" id="qfive"></div>
-      </div>
-      <div class="questioncont">
-        <div class="question2" id="q2five"></div>
-      </div>
-      <div class="container">
-        <div class="box five a" id="5A" onclick="counterAdder(fifth, '5A')"></div>
-        <div class="box five b" id="5B" onclick="counterAdder(fifth, '5B')"></div>
-        <div class="box five c" id="5C" onclick="counterAdder(fifth, '5C')"></div>
-        <div class="box five d" id="5D" onclick="counterAdder(fifth, '5D')"></div>
-      </div>
-
-      <div class="results-button-div">
-        <button type="button" id="results" onclick="Results()">
-          RESULTS
-        </button>
-      </div>
-    </div>
-    <div class="asterisks">
-      * Margin of error .05148% <br />
-      ** Peer reviewed by well established scientists such as the dumbasses on our SMP.
-    </div>
-<div class="results-data">
-<p id="real-results">
-</p>
-<p id="fake-results">
-</p>
-</div>
-  </body>
-
-</html>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
 h1 {
   text-align: center;
@@ -254,8 +143,7 @@ p {
   text-align: center;
   margin: 0 auto;
 }
-</style>
-
+</style>  
 <script>
 var list = {
   bad: [{
@@ -646,7 +534,7 @@ var test_original = {
       a3: "ait bet",
       a4: "No, I'm not your goddamn servant. Helaas Pindakaas, you stupid asshole.",
       c: ["a3"]
-
+      
     },
     {
       q: "You're in a life threatening situation. What do you do?",
@@ -781,10 +669,10 @@ window.addEventListener('load', (event) => {
   document.getElementById("1B").innerHTML = firstq.a2;
   document.getElementById("1C").innerHTML = firstq.a3;
   document.getElementById("1D").innerHTML = firstq.a4;
-
+  
   test.question_list.splice(n1, 1);
 
-  var n2 = Math.floor(Math.random() * test.question_list.length);
+	var n2 = Math.floor(Math.random() * test.question_list.length);
   var secondq = test.question_list[n2];
   document.getElementById("qtwo").innerHTML = secondq.q;
   window.second = secondq;
@@ -793,16 +681,16 @@ window.addEventListener('load', (event) => {
   } catch (error) {
     document.getElementById("q2two").innerHTML = secondq.q2;
   }
-
+	
   document.getElementById("2A").innerHTML = secondq.a1;
   document.getElementById("2B").innerHTML = secondq.a2;
   document.getElementById("2C").innerHTML = secondq.a3;
   document.getElementById("2D").innerHTML = secondq.a4;
-
+  
   test.question_list.splice(n2, 1);
-
-
-  var n3 = Math.floor(Math.random() * test.question_list.length);
+  
+  
+	var n3 = Math.floor(Math.random() * test.question_list.length);
   var thirdq = test.question_list[n3];
   document.getElementById("qthree").innerHTML = thirdq.q;
   window.third = thirdq;
@@ -817,7 +705,7 @@ window.addEventListener('load', (event) => {
   document.getElementById("3D").innerHTML = thirdq.a4;
   test.question_list.splice(n3, 1);
 
-  var n4 = Math.floor(Math.random() * test.question_list.length);
+	var n4 = Math.floor(Math.random() * test.question_list.length);
   var fourthq = test.question_list[n4];
   document.getElementById("qfour").innerHTML = fourthq.q;
   window.fourth = fourthq;
@@ -832,7 +720,7 @@ window.addEventListener('load', (event) => {
   document.getElementById("4D").innerHTML = fourthq.a4;
   test.question_list.splice(n4, 1);
 
-  var n5 = Math.floor(Math.random() * test.question_list.length);
+	var n5 = Math.floor(Math.random() * test.question_list.length);
   var fifthq = test.question_list[n5];
   document.getElementById("qfive").innerHTML = fifthq.q;
   window.fifth = fifthq;
@@ -949,7 +837,7 @@ function HardStomach() {
   //function for warrior
   var baditem = list.bad[Math.floor(Math.random() * list.bad.length)];
   document.getElementById("real-results").innerHTML = baditem.name;
-  //parent.open(baditem.link);
+  setTimeout(function(){ parent.open(baditem.link) }, 1000);
   return;
 }
 
@@ -957,7 +845,118 @@ function Mooks() {
   //function for coward
   var gooditem = list.good[Math.floor(Math.random() * list.good.length)];
   document.getElementById("real-results").innerHTML = gooditem.name;
-  //parent.open(gooditem.link);
+  setTimeout(function(){ parent.open(gooditem.link) }, 1000);
   return;
 }
+
 </script>
+
+</head>
+
+  <body>
+    <h1>
+      <span style="font-family: Great Vibes;font-size:100px;letter-spacing:8px;font-weight:30;">Your<br /></span>
+      <span style="font-family: Palatino;font-size:300px;letter-spacing:2px;font-weight:50">Perfect<br /></span>
+      <span style="font-family: monospace;font-size:50px;letter-spacing:1px;font-weight:5">Fried Food Recipe<br /></span>
+    </h1>
+    <h2>
+      Based on personality and science.*
+    </h2>
+
+    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810834068291846164/dumb_thomas_thing_1.png" id="shittythingleft" class="image">
+
+    <div class="line"></div>
+
+    <img src="https://cdn.discordapp.com/attachments/748843959945789453/810837349692604426/dumb_thomas_thing_2.png" id="shittythingright" class="image">
+
+    <div class="big-container">
+      <div class="number" id="one">1</div>
+      <div class="questioncont">
+        <div class="question" id="qone"></div>
+      </div>
+      <div class="questioncont">
+
+        <div class="question2" id="q2one"></div>
+      </div>
+      <div class="container">
+        <div class="box one a" id="1A" onclick="counterAdder(first, '1A')"></div>
+        <div class="box one b" id="1B" onclick="counterAdder(first, '1B')"></div>
+        <div class="box one c" id="1C" onclick="counterAdder(first, '1C')"></div>
+        <div class="box one d" id="1D" onclick="counterAdder(first, '1D')"></div>
+      </div>
+
+      <div class="number" id="two">2</div>
+      <div class="questioncont">
+        <div class="question" id="qtwo"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2two"></div>
+      </div>
+      <div class="container">
+        <div class="box two a" id="2A" onclick="counterAdder(second, '2A')"></div>
+        <div class="box two b" id="2B" onclick="counterAdder(second, '2B')"></div>
+        <div class="box two c" id="2C" onclick="counterAdder(second, '2C')"></div>
+        <div class="box two d" id="2D" onclick="counterAdder(second, '2D')"></div>
+      </div>
+
+      <div class="number" id="three">3</div>
+      <div class="questioncont">
+        <div class="question" id="qthree"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2three"></div>
+      </div>
+      <div class="container">
+        <div class="box three a" id="3A" onclick="counterAdder(third, '3A')"></div>
+        <div class="box three b" id="3B" onclick="counterAdder(third, '3B')"></div>
+        <div class="box three c" id="3C" onclick="counterAdder(third, '3C')"></div>
+        <div class="box three d" id="3D" onclick="counterAdder(third, '3D')"></div>
+      </div>
+
+      <div class="number" id="four">4</div>
+      <div class="questioncont">
+        <div class="question" id="qfour"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2four"></div>
+      </div>
+      <div class="container">
+        <div class="box four a" id="4A" onclick="counterAdder(fourth, '4A')"></div>
+        <div class="box four b" id="4B" onclick="counterAdder(fourth, '4B')"></div>
+        <div class="box four c" id="4C" onclick="counterAdder(fourth, '4C')"></div>
+        <div class="box four d" id="4D" onclick="counterAdder(fourth, '4D')"></div>
+      </div>
+
+      <div class="number" id="five">5</div>
+      <div class="questioncont">
+        <div class="question" id="qfive"></div>
+      </div>
+      <div class="questioncont">
+        <div class="question2" id="q2five"></div>
+      </div>
+      <div class="container">
+        <div class="box five a" id="5A" onclick="counterAdder(fifth, '5A')"></div>
+        <div class="box five b" id="5B" onclick="counterAdder(fifth, '5B')"></div>
+        <div class="box five c" id="5C" onclick="counterAdder(fifth, '5C')"></div>
+        <div class="box five d" id="5D" onclick="counterAdder(fifth, '5D')"></div>
+      </div>
+
+      <div class="results-button-div">
+        <button type="button" id="results" onclick="Results()">
+          RESULTS
+        </button>
+      </div>
+    </div>
+    <div class="asterisks">
+      * Margin of error .05148% <br />
+      ** Peer reviewed by well established scientists such as the dumbasses on our SMP.
+    </div>
+<div class="results-data">
+<p id="real-results">
+</p>
+<p id="fake-results">
+</p>
+</div>
+  </body>
+
+</html>
