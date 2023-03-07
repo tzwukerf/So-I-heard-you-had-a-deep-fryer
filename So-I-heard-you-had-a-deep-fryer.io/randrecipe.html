@@ -7,44 +7,6 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <meta charset=utf-8 />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta|Staatliches">
-  </head>
-
-  <body>
-
-    <div class="crown"></div>
-    <div class="special">
-      <button type="button" id="fate" onclick="HaveMercy()">
-      </button>
-    </div>
-
-    <div class="horns" id="left-horn">
-      <img src="https://cdn.discordapp.com/attachments/748843959945789453/811148428276137984/hornleft.png" style="height:600px;width:600px">
-    </div>
-    <div class="horns" id="right-horn">
-      <img src="https://cdn.discordapp.com/attachments/748843959945789453/811148244217888828/horn.png" style="height:600px;width:600px">
-    </div>
-
-    <div>
-      <button type="button" class="other" id="coward" onclick="Mooks()">
-        Coward's <br />Button
-      </button>
-    </div>
-
-    <div>
-      <button type="button" class="other" id="warrior" onclick="HardStomach()">
-        Warrior's <br />Button
-      </button>
-    </div>
-
-    <p id="linkthing">
-    </p>
-    <div id="anothercont">
-      <p id="imglinkthing">
-      </p>
-    </div>
-  </body>
-
-</html>
 
 <style>
 div {
@@ -179,7 +141,6 @@ div::after {
 </style>
 
 <script>
-//bugs: coward and warrior doesn't click after the first time
 //feature: sound and turns backgrounnd black for a second after click on fate
 //feature: add picture of the deep fried food
 
@@ -320,6 +281,11 @@ var list = {
 function HaveMercy() {
   //function for fate
   var item1 = Math.floor(Math.random() * 2);
+  document.getElementById("lightning-struck-the-scene-of-the-crime").play();
+  $("body").css("background-color", "black")
+  setTimeout(function() {
+    $("body").css("background-color", "white")
+  }, 250);
   if (item1 == 0) {
     HardStomach();
   }
@@ -333,7 +299,11 @@ function HardStomach() {
   var baditem = list.bad[Math.floor(Math.random() * list.bad.length)];
   document.getElementById("linkthing").innerHTML = baditem.name;
   $("#imglinkthing").replaceWith("<img id='imglinkthing' src=" + baditem.img + ">")
-  parent.open(baditem.link);
+  
+  setTimeout(function() {
+    parent.open(baditem.link);
+  }, 1000);
+
 }
 
 function Mooks() {
@@ -341,7 +311,10 @@ function Mooks() {
   var gooditem = list.good[Math.floor(Math.random() * list.good.length)];
   document.getElementById("linkthing").innerHTML = gooditem.name;
   $("#imglinkthing").replaceWith("<img id='imglinkthing' src=" + gooditem.img + ">")
-  parent.open(gooditem.link);
+  setTimeout(function() {
+    parent.open(gooditem.link);
+  }, 1000);
+
 }
 
 
@@ -374,5 +347,44 @@ function Mooks() {
 
   document.getElementById("linkthing").innerHTML = gooditem;
   */
-  
+
 </script>
+
+  </head>
+
+  <body>
+<audio controls id="lightning-struck-the-scene-of-the-crime" style="display: none"> <source src="thunder.mp3" type="audio/mpeg"> </audio>
+    <div class="crown"></div>
+    <div class="special">
+      <button type="button" id="fate" onclick="HaveMercy()">
+      </button>
+    </div>
+
+    <div class="horns" id="left-horn">
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/811148428276137984/hornleft.png" style="height:600px;width:600px">
+    </div>
+    <div class="horns" id="right-horn">
+      <img src="https://cdn.discordapp.com/attachments/748843959945789453/811148244217888828/horn.png" style="height:600px;width:600px">
+    </div>
+
+    <div>
+      <button type="button" class="other" id="coward" onclick="Mooks()">
+        Coward's <br />Button
+      </button>
+    </div>
+
+    <div>
+      <button type="button" class="other" id="warrior" onclick="HardStomach()">
+        Warrior's <br />Button
+      </button>
+    </div>
+
+    <p id="linkthing">
+    </p>
+    <div id="anothercont">
+      <p id="imglinkthing">
+      </p>
+    </div>
+  </body>
+
+</html>
