@@ -1,18 +1,18 @@
 # tzwukerf.github.io
 
-Contact:
+**Contact:**
 
 Email: tzwukerf@gmail.com OR wu1627@purdue.edu
 
 Phone: 609-516-8822
 
-Group Projects:
+**Group Projects:**
 
 CharityLink: Group Project developed by a team of four Purdue University students, Aanya Jha, Natalie Harrison, Varun Jasti, and Susan Wu. This website was created with the intent to help those in need find resources. Anybody can donate spare items they have around the house to those in need, or they can deliver items from organizations to receivers. The server is not currently up but send me an email if you're interested and I can start it up for you. Made using Javascript, Java, and SQL. Link: https://aanyajha.github.io/CharityLink.io/FrontendFiles/index.html
 
 Java Web Server: Final group project for CS180, developed by a team of five, Gonger Wang, Keegan Carter, Hunter Watson, Rahul Goyal, and Susan Wu. Instructions to run the server and login are detailed in the README. Functionality includes creating an account, logging in, add friends, view profile, import profile, and export profile. Link: https://github.com/Keegodude/CS180-Project-5/blob/main/README.md
 
-Personal Projects:
+**Personal Projects:**
 
 So I heard you had a deep fryer: Website made for fun. Do you have a deep fryer? Find the perfect deep frying recipe, personalized for you! Link: https://tzwukerf.github.io/So-I-heard-you-had-a-deep-fryer.io/
 
