@@ -2,6 +2,8 @@
 
 **Contact:**
 
+Susan Wu
+
 Email: tzwukerf@gmail.com OR wu1627@purdue.edu
 
 Phone: 609-516-8822
