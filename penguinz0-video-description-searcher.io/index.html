@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Penguinz0 Description Searcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="top-cont"><p>This is the greatest</p></div>
+<div id="example-word">
+scammer fight
+</div>
+<div>
+<p>
+of All Time
+</p>
+</div>
+
+<div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Find the greatest anything of all time" name="search">
+      <!-- mouse hover it says YEAH BABY, unhover it says search-->
+      <span><button class="button-class" type="submit"></button></span>
+    </form>
+  </div>
+
+</body>
+
+</html>
+
+<style>
+  p {
+  font-size: 80px;
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+#example-word {
+  font-size: 80px;
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+  text-align: center;
+  color: red;
+}
+
+.search-container {
+  font-family: 'Montserrat', sans-serif;
+  display: inline;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input {
+  vertical-align: bottom;
+  margin-top: 5%;
+  height: 60px;
+  width: 650px;
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+button {
+  display: inline-block;
+  margin-top: 100px;
+  height: 65px;
+  width: 85px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  content: "Search";
+  color: white;
+  
+  background-color: #555555; /* Green */
+  border: none;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-class {
+  content: "Search";
+  background-color: white;
+  color: #555555;
+  border: 2px solid #555555;
+}
+
+.button-class::before {
+  content: "Search";
+}
+
+.button-class:hover {
+  color: white;
+  background: #555555;
+}
+
+.button-class:hover::before {
+  content: "YEAH BABY";
+}
+
+#top-cont {
+  margin-top: 8%;
+}
+</style>
+
+
+<script>
+//TODO:
+  /*
+  -Work on autocomplete functionality
+  -Work on PHP and JS to connect to site and format it
+  -Make site look prettier with animations and fonts
+  */
+
+  
+  var pseudolist = ["sad livestream", "gta6 hype", "scammer fight"];
+var colorlist = ["red", "blue", "green"];
+
+window.onload = function () {
+    setInterval(colorful, 1000);
+};
+
+
+function colorful() {
+
+	var example = document.getElementById("example-word");
+	example.style.color = colorlist[Math.floor(Math.random() * 3)];
+  example.innerHTML = pseudolist[Math.floor(Math.random() * 3)];
+	example.style.fontSize = "80px";
+  example.style.fontFamily = "Montserrat";
+  //example.style.padding = "-10px";
+  example.style.margin = "auto";
+  example.style.textAlign = "center";
+  
+}
+</script>
