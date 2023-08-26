@@ -8,4 +8,11 @@ You can search for it right here!
 
 Dev Log:
 
+TODO:
+- Autocomplete functionality
+- Full PHP support with prevention against SQL injections
+- If Charlie edits his videos it is not updated
+
+-Have the database completed
+
 -Needs further research, will be using https://github.com/yt-dlp/yt-dlp
