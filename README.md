@@ -17,7 +17,7 @@ Java Web Server: Final group project for CS180, developed by a team of five, Gon
 **Personal Projects:**
 
 Current Personal Project: 
-Penguinz0 video description searcher: The popular Youtuber penguinz0, also known as MoistCr1TiKaL on Twitch, always has his video descriptions as "This is the (blank) of All Time" and I thought it would be fun to create a website that lets you search these up. For example, if you search "waste of money", the link to the video "Worst Juicer Ever Created" will be linked (as you can see in the video, the description is "This is the greatest waste of money of All Time"). Link: https://thisisthegreatestpenguinz0fansiteofalltime.com/
+Penguinz0 video description searcher: The popular Youtuber penguinz0, also known as MoistCr1TiKaL on Twitch, always has his video descriptions as "This is the (blank) of All Time" and I thought it would be fun to create a website that lets you search these up. For example, if you search "waste of money", the link to the video "Worst Juicer Ever Created" will be linked (as you can see in the video, the description is "This is the greatest waste of money of All Time"). Link: https://thisisthegreatestpenguinz0fansiteofalltime.com/index.html
 
 So I heard you had a deep fryer: Website made for fun. Do you have a deep fryer? Find the perfect deep frying recipe, personalized for you! Link: https://tzwukerf.github.io/So-I-heard-you-had-a-deep-fryer.io/
 
