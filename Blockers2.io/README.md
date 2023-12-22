@@ -1,6 +1,6 @@
 # Blockers 2
 
-In junior year of high school, I made a very shitty Javascript game in my coding class. It was originally on CodeHS, didn't look nice, was rewritten to be completely in a browser-compatible version of Javascript (instead of CodeHS Javascript). This was during my freshman year of university.
+In junior year of high school, I made a very shitty Javascript game in my coding class. It was originally on CodeHS and was awful and I couldn't even run it anywhere else but CodeHS, so I rewrote it completely with a browser-compatible version of Javascript (instead of CodeHS Javascript). This was during my freshman year of university.
 
 Obviously... it wasn't great. I didn't know what Dijkstra's algorithm was yet, I did no leetcode, I wrote a bunch of code and tested it later to get bugs I lost my mind trying to figure out in endless jumbles of word mess I called "code."
 
