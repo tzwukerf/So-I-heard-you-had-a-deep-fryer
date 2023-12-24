@@ -47,7 +47,6 @@ function setup() {
   x = randomInitial;
   number = ((rows * cols) - (cols - 1));
   //}
-  console.log(checkerBFS(x, 1));
   return;
 }
 
