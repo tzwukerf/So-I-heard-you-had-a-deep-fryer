@@ -1,0 +1,40 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+#container {
+  display: grid;
+  grid-gap: 0em;
+  grid-template-rows: repeat(var(--grid-rows), 0fr);
+  grid-template-columns: repeat(var(--grid-cols), 0fr);
+  justify-content: center;
+}
+
+.grid-item {
+  padding: 2em;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.blue {
+  fill: #0000ff;
+}
+
+.purple {
+  fill: #7F00FF;
+}
+
+.white {
+  fill: #FFFFFF;
+}
+
+.character {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background-color: #6d00c1;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
