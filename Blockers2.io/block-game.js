@@ -25,7 +25,7 @@ var points = 0;
 
 var number;
 
-var free = new Array(row * cols);
+var free = new Array(rows * cols);
 
 window.onload = setup();
 
