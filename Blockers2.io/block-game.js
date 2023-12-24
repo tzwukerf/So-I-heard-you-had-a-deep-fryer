@@ -47,6 +47,7 @@ function setup() {
   x = randomInitial;
   number = ((rows * cols) - (cols - 1));
   //}
+  console.log(checkerBFS(x, 1));
   return;
 }
 
@@ -99,8 +100,6 @@ function makeRows(rows, cols) {
   return [rows, cols];
 }
 
-console.log(checkerBFS(x, 1));
-
 
 function checkerBFS(x, mode) {
 
@@ -122,6 +121,7 @@ function checkerBFS(x, mode) {
     if (head == randomGoal || head == purplePortal || head == bluePortal) {
       return true;
     }
+    visited[head] = true;
     for (var i = 0; i < 8; i++) {
       var surrounding = [head - cols - 1, head - cols, head - cols + 1, head + 1, head + cols + 1, head + cols, head + cols - 1, head - 1];
       if (surrounding[i] <= (rows * cols) && surrounding[i] > 0) {
