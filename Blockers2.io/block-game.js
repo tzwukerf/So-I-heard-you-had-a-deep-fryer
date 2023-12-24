@@ -102,6 +102,8 @@ function makeRows(rows, cols) {
 
 function checkerBFS(x, mode) {
 
+  //TODO: DOES NOT WORK INFINITE LOOP
+
   // 1: character is blue and can only break 1
   // 2: character is purple and can only break 2
 
@@ -120,12 +122,14 @@ function checkerBFS(x, mode) {
     if (head == randomGoal || head == purplePortal || head == bluePortal) {
       return true;
     }
+    alert(head);
+    alert(visited);
     visited[head] = true;
     for (var i = 0; i < 8; i++) {
       var surrounding = [head - cols - 1, head - cols, head - cols + 1, head + 1, head + cols + 1, head + cols, head + cols - 1, head - 1];
-      if (surrounding[i] <= (rows * cols) && surrounding[i] > 0) {
+      if (surrounding[i] <= (rows * cols) && surrounding[i] >= 0) {
         var temp = document.getElementById("grid" + surrounding[i]).innerHTML;
-        if (!visited[surrounding[i]] && (temp == mode.toString() || temp == " ")) {
+        if (!visited[surrounding[i]]) { //&& (temp == mode.toString() || temp == " ")) {
           queue.push(surrounding[i]);
         }
       }
