@@ -125,6 +125,7 @@ function checkerBFS(x, mode) {
     }
     alert(head);
     alert(visited);
+    alert(queue);
     visited[head] = true;
     for (var i = 0; i < 8; i++) {
       var surrounding = [head - cols - 1, head - cols, head - cols + 1, head + 1, head + cols + 1, head + cols, head + cols - 1, head - 1];
