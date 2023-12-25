@@ -31,6 +31,7 @@ window.onload = setup();
 
 function keyDown(e) {
 
+  console.log(checkerBFS(x, 1));
 
 }
 
