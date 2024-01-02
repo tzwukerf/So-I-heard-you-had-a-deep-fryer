@@ -129,6 +129,16 @@ function checkerBFS(x, mode) {
     visited[head] = true;
     for (var i = 0; i < 8; i++) {
       var surrounding = [head - cols - 1, head - cols, head - cols + 1, head + 1, head + cols + 1, head + cols, head + cols - 1, head - 1];
+      if (head % cols == 0) { //this means head is on the right
+        surrounding[2] = head;
+        surrounding[3] = head;
+        surrounding[4] = head;
+      }
+      if (head % cols == 1) { // this means head is on the left
+        surrounding[0] = head;
+        surrounding[6] = head;
+        surrounding[7] = head;
+      }
       if (surrounding[i] <= (rows * cols) && surrounding[i] >= 0) {
         var temp = document.getElementById("grid" + surrounding[i]).innerHTML;
         if (!visited[surrounding[i]]) { //&& (temp == mode.toString() || temp == " ")) {
